@@ -15,7 +15,10 @@
 - [ ] Also run it for FormType, HiddenType, LanguageType, MoneyType, PasswordType
 - [ ] Also run it for PercentType, RadioType, RangeType, RepeatedType
 - [ ] Also run it for ResetType, searchType, SubmitType, TelType, TimeType, UrlType, WeekType
-
+### Security
+[Symfony security](https://symfonycasts.com/screencast/symfony-security)
+- [x] Composer install security components: `composer require security`
+- [ ] 
 ### Markdown examples
 `code`
 Link 	[title](https://www.example.com)
