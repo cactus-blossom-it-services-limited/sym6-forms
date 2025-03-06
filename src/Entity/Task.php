@@ -2,12 +2,17 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 // Note this is a plain-old-PHP-object not a doctrine entity
 class Task
 {
     protected string $task;
 
     protected ?\DateTimeInterface $dueDate;
+
+    #[Assert\Choice(['household', 'shopping', 'languages'])]
+    protected string $Category;
 
     public function getTask(): string
     {
@@ -28,4 +33,17 @@ class Task
     {
         $this->dueDate = $dueDate;
     }
+
+    public function getCategory(): ?string
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(string $Category): static
+    {
+        $this->Category = $Category;
+
+        return $this;
+    }
+
 }
