@@ -27,6 +27,7 @@ class Product
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
+    // Add choice constraint
     #[Assert\Choice(choices: Product::CATEGORIES, message: 'Choose a valid category')]
     private ?string $Category = null;
 

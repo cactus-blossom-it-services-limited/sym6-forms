@@ -11,6 +11,7 @@ class Task
 
     protected ?\DateTimeInterface $dueDate;
 
+    // Add choice constraint
     #[Assert\Choice(['household', 'shopping', 'languages'])]
     protected string $Category;
 
