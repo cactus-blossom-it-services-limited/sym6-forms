@@ -32,6 +32,7 @@ final class ProductFactory extends PersistentProxyObjectFactory
     protected function defaults(): array|callable
     {
         return [
+            // See https://fakerphp.org/formatters/numbers-and-strings/
             'Category' => self::faker()->randomElement(Product::CATEGORIES),
             'description' => self::faker()->text(),
             'name' => self::faker()->text(255),
