@@ -17,6 +17,7 @@ class ProductController extends AbstractController
         $product->setName('Keyboard');
         $product->setPrice(1999);
         $product->setDescription('Ergonomic and stylish!');
+        $product->setCategory('electrical');
 
         // indicate you want to eventually save Product but no queries yet
         $entityManager->persist($product);
