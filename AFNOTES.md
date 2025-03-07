@@ -9,6 +9,9 @@
 - [x] Create a category field for Task POPO
 - [x] Create a category field for the Product entity
 - [x] Put a choice constraint on the category field in Task and Product
+- [] Create a migration for the category field in Task and Product
+- [] Execute the migration for the category field, confirm it works
+- [] Update foundry for the Product entity to add categories
 - Though at src/Entity/Task.php it is a plain-old-PHP-object NOT a doctrine entity
 - It is a normal PHP object
 - [x] Run php bin/console debug:form
