@@ -8,6 +8,7 @@ runtime:
         - mbstring
         - ctype
         - iconv
+        - pdo_pgsql
 
 
 #variables:
@@ -68,7 +69,3 @@ workers:
 
 relationships:
     database:
-
-runtime:
-  extensions:
-    - pdo_pgsql
