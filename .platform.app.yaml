@@ -68,3 +68,7 @@ workers:
 
 relationships:
     database:
+
+runtime:
+  extensions:
+    - pdo_pgsql
