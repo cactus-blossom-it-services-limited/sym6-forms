@@ -30,7 +30,17 @@
 ### Security
 [Symfony security](https://symfonycasts.com/screencast/symfony-security)
 - [x] Composer install security components: `composer require security`
-- [ ] 
+[ ] 
+### Platform.sh deployment
+- [x] Use sym6-forms git hub repository to deploy to Platform.sh
+- [x] Install platform-cli on Mac and Linux desktop
+- [x] Initiate platform project using platform-cli on local
+- [x] Deploy Platform.sh project from local to Platform.sh
+- [x] Add relationship for the postresql:16 database
+- [x] Update plan for the project to 'essential' or 'standard' to allow custom domain
+### Custom domain
+- [] Create a new domain on Godaddy or AWS for cymfony.com or similar
+- [] Park the Platform.sh project on the domain by configuring a canonical record
 ### Markdown examples
 `code`
 Link 	[title](https://www.example.com)
