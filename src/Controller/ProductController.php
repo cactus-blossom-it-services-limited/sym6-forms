@@ -8,10 +8,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ProductController extends AbstractController
 {
-    #[Route('/product', name: 'create_product')]
+    #[Route('/{_locale}/product',
+        name: 'create_product',
+        requirements: [
+            '_locale' => 'en|fr',
+            ],
+    )]
     public function createProduct(EntityManagerInterface $entityManager, TranslatorInterface $translator): Response
     {
         $product = new Product();
@@ -26,8 +32,14 @@ class ProductController extends AbstractController
         // actually executes the queries i.e. the INSERT query
         $entityManager->flush();
 
-//        $translated = $translator->trans("Enregistrement d'un nouveau produit avec l'id ");
-        $translated = $translator->trans('Saved new product with id ');
-        return new Response($translated .$product->getId());
+        $translated = $translator->trans('Saved new product with id');
+        return new Response($translated. ' ' .$product->getId());
+    }
+
+    #[Route('/product', name: 'product_redirect')]
+    public function productRedirect(): RedirectResponse
+    {
+        // redirects to the "create_product" route
+        return $this->redirectToRoute('create_product');
     }
 }
