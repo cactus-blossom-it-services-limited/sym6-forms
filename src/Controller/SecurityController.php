@@ -22,4 +22,10 @@ class SecurityController extends AbstractController
     {
         throw new \Exception('logout() should never be reached');
     }
+
+    #[Route('/admin', name: 'app_admin')]
+    public function testAdmin()
+    {
+        throw new \Exception('Hey, you made it past access control!!');
+    }
 }
