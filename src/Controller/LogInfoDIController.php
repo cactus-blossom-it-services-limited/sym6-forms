@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\LogDIExampleService;
-use Psr\Log\LoggerInterface;
+use App\DIServices\DodoLog;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -11,9 +10,9 @@ use Symfony\Component\Routing\Attribute\Route;
 class LogInfoDIController extends AbstractController
 {
     #[Route('/log', name: 'app_log')]
-    public function logInfo(LogDIExampleService $logService): Response
+    public function logInfo(DodoLog $logDodo): Response
     {
-        $logService->logInfo('This is a log message from Service - Constructor Injection!');
+        $logDodo->dodoLog();
 
         return new Response('Log written!');
     }
