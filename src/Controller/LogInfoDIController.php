@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\DIServices\DodoLog;
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class LogInfoDIController extends AbstractController
 {
     #[Route('/log', name: 'app_log')]
-    public function logInfo(DodoLog $logDodo): Response
+    public function logInfo(LoggerInterface $pissLog): Response
     {
-        $logDodo->dodoLog();
+        $pissLog->info('This is the piss log!');
 
-        return new Response('Log written!');
+        return new Response('Piss log written!');
     }
 }
